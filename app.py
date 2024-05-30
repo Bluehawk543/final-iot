@@ -13,7 +13,7 @@ if uploaded_file is not None:
    df1=pd.read_csv(uploaded_file)
 
    st.subheader('Perfil gráfico de la variable humedad.')
-   df1 = df1.set_index('time')
+   df1 = df1.set_index('humedad')
    st.line_chart(df1)
    
    st.write(df1)
