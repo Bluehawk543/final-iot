@@ -12,13 +12,13 @@ uploaded_file = st.file_uploader('Choose a file')
 if uploaded_file is not None:
    df1=pd.read_csv(uploaded_file)
 
-   st.subheader('Perfil gráfico de la variable medida.')
+   st.subheader('Perfil gráfico de la variable humedad.')
    df1 = df1.set_index('Time')
    st.line_chart(df1)
    
    st.write(df1)
    st.subheader('Estadísticos básicos de los sensores.')
-   st.dataframe(df1["temperatura ESP32"].describe())
+   st.dataframe(df1["humedad ESP32"].describe())
    
    min_temp = st.slider('Selecciona valor mínimo del filtro ', min_value=-10, max_value=45, value=23, key=1)
    # Filtrar el DataFrame utilizando query
